@@ -56,7 +56,7 @@ For the following example checkout the concepts:
 
 To clarify the idea I created the next picture with the before and after applying DIP:
 
-![](/static/DIP-1-2.png) 
+![](/img/DIP-1-2.png) 
 
 *   On the left side of the next picture we find in blue an Layered Application where the DepositService depends on AccountSQLRepository.
 *   And on the right side in green, by adding an IAccountRepository and applying DIP then the AccountSQLRepository has your dependency pointing inwards. aaaaa
@@ -119,7 +119,9 @@ With this style we have:
 *   Adapters providing implementations of frameworks and access to databases.
 *   Externally the user, other systems and services.
 
-One way to explain the Hexagonal Architecture is by its shapes. Take a look at the following picture: ![](/static/hexagonal-1.png)  
+One way to explain the Hexagonal Architecture is by its shapes. Take a look at the following picture:
+
+![](/img/hexagonal-1.png)  
 
 *   The blue potato shape at the center is the Domain and there are reasons for it. Every business domain has its own rules, different specifications from each other, that is the reason of its undefined shape. For instance, I designed our Domain Layer with DDD Patterns.
 *   The application has an hexagonal shape because each of its sides has specifics protocols, in our example we have **Commands** and **Queries** giving access to the Application.
@@ -132,7 +134,7 @@ The direction of the dependencies goes inwards the center, so the Domain Layer d
 
 Let's describe the Dependency Layer Diagram below:
 
-[![](/static/Untitled-Diagram-1.png)](/static/Untitled-Diagram-1.png)
+[![](/img/Untitled-Diagram-1.png)](/img/Untitled-Diagram-1.png)
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 *   The domain is totally independent of other layers and frameworks.

@@ -39,7 +39,7 @@ Now... suppose that we wish to design a software architecture that prioritize co
 
 What if we could focus on business requirements and ignore everything else? The idea behind "Ports and Adapters" is to decouple the high level modules from the low level modules, in simple terms you could decouple the business rules from the database and user interface.
 
-[![Hexagonal Architecture](/static/hexagonal-architecture/hexagonal-architecture.png)](/static/hexagonal-architeture/hexagonal-architecture.png)
+[![Hexagonal Architecture](/img/hexagonal-architecture/hexagonal-architecture.png)](/img/hexagonal-architeture/hexagonal-architecture.png)
 
 As you can see on the left side there are driving actors:
 
@@ -63,19 +63,19 @@ The benefit of "Ports and Adapters" is that the application use cases could be i
 
 > What about the driving actors? When should I implement them?
 
-![First Step](/static/hexagonal-architecture/guided-by-tests-1.png)
+![First Step](/img/hexagonal-architecture/guided-by-tests-1.png)
 
 The **first driving adapter** you should implement are the **Test Harness**. And to run tests you don't need an user inteface, see how you don't need to worry about button colors and font faces? These tests will guide the use case implementation against a mocked database.
 
-![Second Step](/static/hexagonal-architecture/guided-by-tests-2.png)
+![Second Step](/img/hexagonal-architecture/guided-by-tests-2.png)
 
 With the knowledge acquired by the unit tests implementation you can more confident design the **User Interface** then get user feedback. Every stage is a learning process, be open to change the use cases implementation and test harness at anytime!
 
-![Third Step](/static/hexagonal-architecture/guided-by-tests-3.png)
+![Third Step](/img/hexagonal-architecture/guided-by-tests-3.png)
 
 You now can go deeper in details and implement how the application consume the database, and you can run your existing tests against this secondary actor. Should I say that you will do small changes in the application use cases to support this new adapter? You will!
 
-![Final Step](/static/hexagonal-architecture/guided-by-tests-4.png)
+![Final Step](/img/hexagonal-architecture/guided-by-tests-4.png)
 
 The last step you run the **User Interface** against a real database implementation and get more feedback!
 

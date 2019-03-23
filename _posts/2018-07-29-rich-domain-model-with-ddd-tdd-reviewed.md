@@ -15,7 +15,13 @@ The opposite of the Rich Domain Models are the Anemic Domain Models, in this sec
 
 ### Feature Envy
 
-It’s the situation where a client class access the fields of another class more than it's own data. In order to keep the policies of the second class consistent the consumer needs to validate and manipulate multiple fields together. This code smell is easy to find when "Application Services" or "Extension Methods" are envy of other Entities fields. These application services implement the policies that should be managed by the Entities classes. Just like this: ![](/static/envy.png) The solution for this code smell is to move the envy method into the class that owns the data then hide the internal details. ![](/static/feature-envy-fixed.png)
+It’s the situation where a client class access the fields of another class more than it's own data. In order to keep the policies of the second class consistent the consumer needs to validate and manipulate multiple fields together. This code smell is easy to find when "Application Services" or "Extension Methods" are envy of other Entities fields. These application services implement the policies that should be managed by the Entities classes. Just like this:
+
+![](/img/envy.png)
+
+The solution for this code smell is to move the envy method into the class that owns the data then hide the internal details. 
+
+![](/img/feature-envy-fixed.png)
 
 ### Primitive Obsession
 
@@ -69,7 +75,9 @@ We are going to learn by example, next you see some business rules then the impl
 7.  Allow to get the customer details.
 8.  It's required from the customer to fill Name, SSN and to deposit an initial amount when registering.
 
-We could identify the following DDD patterns for these business: [![](/static/model.png)](/static/model.png)
+We could identify the following DDD patterns for these business:
+
+[![](/img/model.png)](/img/model.png)
 
 *   **Aggregate Roots:** Customer and Account.
 *   **Entities:** Credit and Debit.
