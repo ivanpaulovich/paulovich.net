@@ -9,6 +9,8 @@ github_username:  ivanpaulovich
 linkedin_username:  ivanpaulovich
 instagram_username:  ivanpaulovich
 
+disqus: paulovichdotnet
+
 # Build settings
 markdown: kramdown
 theme: jekyll-theme-clean-blog
