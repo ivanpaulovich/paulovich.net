@@ -1,0 +1,20 @@
+title: paulovich.NET
+email: ivan@paulovich.net
+description:       Software Architecture
+author:            Ivan Paulovich
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: ivanpaulovich
+github_username:  ivanpaulovich
+linkedin_username:  ivanpaulovich
+instagram_username:  ivanpaulovich
+
+# Build settings
+markdown: kramdown
+theme: jekyll-theme-clean-blog
+paginate:          5
+paginate_path:     "/posts/page:num/"
+plugins:
+  - jekyll-feed
+  - jekyll-paginate
+  - jekyll-redirect-from
