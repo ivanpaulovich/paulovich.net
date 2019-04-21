@@ -39,7 +39,8 @@ Now... suppose that we wish to design a software architecture that prioritize co
 
 What if we could focus on business requirements and ignore everything else? The idea behind "Ports and Adapters" is to decouple the high level modules from the low level modules, in simple terms you could decouple the business rules from the database and user interface.
 
-[![Hexagonal Architecture](/img/hexagonal-architecture/hexagonal-architecture.png)](/img/hexagonal-architeture/hexagonal-architecture.png)
+<img class="img-fluid" src="/img/hexagonal-architecture/hexagonal-architecture.png" alt="Hexagonal Architecture">
+<span class="caption text-muted">Hexagonal Architecture.</span>
 
 As you can see on the left side there are driving actors:
 
@@ -50,8 +51,8 @@ The secondary actors are on the right side:
 
 - Mocked Database
 - SQL Database Adapter
-- Mocked Webserver
-- Webserver Adapter
+- Mocked Web server
+- Web server Adapter
 
 The use cases are implemented inside the **Application Layer**.
 
@@ -59,23 +60,27 @@ What I am saying is that whatever the right or left side dependencies are you al
 
 ## Ports and Adapters Implementation Workflow
 
-The benefit of "Ports and Adapters" is that the application use cases could be implemented in isolation from external services, so we can delay the database and webserver implementation by creating fake implementations. 
+The benefit of "Ports and Adapters" is that the application use cases could be implemented in isolation from external services, so we can delay the database and web server implementation by creating fake implementations. 
 
 > What about the driving actors? When should I implement them?
 
-![First Step](/img/hexagonal-architecture/guided-by-tests-1.png)
+<img class="img-fluid" src="/img/hexagonal-architecture/guided-by-tests-1.png" alt="First Step">
+<span class="caption text-muted">First Step</span>
 
 The **first driving adapter** you should implement are the **Test Harness**. And to run tests you don't need an user inteface, see how you don't need to worry about button colors and font faces? These tests will guide the use case implementation against a mocked database.
 
-![Second Step](/img/hexagonal-architecture/guided-by-tests-2.png)
+<img class="img-fluid" src="/img/hexagonal-architecture/guided-by-tests-2.png" alt="Second Step">
+<span class="caption text-muted">Second Step</span>
 
 With the knowledge acquired by the unit tests implementation you can more confident design the **User Interface** then get user feedback. Every stage is a learning process, be open to change the use cases implementation and test harness at anytime!
 
-![Third Step](/img/hexagonal-architecture/guided-by-tests-3.png)
+<img class="img-fluid" src="/img/hexagonal-architecture/guided-by-tests-3.png" alt="Third Step">
+<span class="caption text-muted">Third Step</span>
 
 You now can go deeper in details and implement how the application consume the database, and you can run your existing tests against this secondary actor. Should I say that you will do small changes in the application use cases to support this new adapter? You will!
 
-![Final Step](/img/hexagonal-architecture/guided-by-tests-4.png)
+<img class="img-fluid" src="/img/hexagonal-architecture/guided-by-tests-4.png" alt="Final Step">
+<span class="caption text-muted">Final Step</span>
 
 The last step you run the **User Interface** against a real database implementation and get more feedback!
 

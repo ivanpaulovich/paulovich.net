@@ -5,7 +5,8 @@ date: 2019-04-19T06:12:52+02:00
 ---
 I released a dotnet tool to manage tasks via the comnand line. The tasks are stored in a `secret gist` in your own GitHub account. Checkout a few commands:
 
-[![todo](/img/todo-exported.png)](https://github.com/ivanpaulovich/todo)
+<img class="img-fluid" src="/img/todo-exported.png" alt="todo">
+<span class="caption text-muted">Todo running in the terminal.</span>
 
 If you have your machine up to date with the [latest .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2) and you are interest to see `todo` in action please run:
 
