@@ -5,7 +5,9 @@ date: 2019-04-20T06:12:52+02:00
 ---
 I have been following the Clean Architecture principles on the [todo](https://github.com/ivanpaulovich/todo) development and I would like to share my experience with you. The strategies and decisions I have made could help you in future projects.
 
-The first step I did was to pick a simple domain to design, I chose the "Tasks Management" domain and the expected use cases are listed below:
+## Use Cases
+
+The first step I did was to pick a simple domain, I chose the "Tasks Management" domain and the expected use cases are listed below:
 
 * Add a new task.
 * List all tasks.
@@ -17,6 +19,8 @@ The first step I did was to pick a simple domain to design, I chose the "Tasks M
 To summarize the Clean Architecture style I would say that it is an application designed around use cases with the implementation guided by tests. So the next step in the `todo tool` development was to setup the test project.
 
 I created the `TodoList.UnitTests` for tests and `TodoList.Core` for the use cases implementation. That is right, when I started the development I did not create an "Web API project" instead I consider that the first application consumer are the unit tests.
+
+## Tests
 
 Going further. The tests and production code are created at the same time. For instance when designing the TodoUseCase, I created a test case that verifies null input.
 
