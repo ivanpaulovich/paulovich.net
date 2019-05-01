@@ -50,7 +50,8 @@ In the next example, the DIP was applied when decoupling our Use Cases from th
 
 Let's see how I applied this principle in the next example:
 
-![](/img/DIP-1-2.png)
+<img class="img-fluid" src="/img/DIP-1-2.png" alt="DIP">
+<span class="caption text-muted">DIP</span>
 
 On the left side we found in red an Layered Application where the DepositUseCase depends on the AccountSQLRepository implementation. It is a coupled way to write code. On the right side in blue, by adding an IAccountRepository and applying DIP then the AccountSQLRepository has its dependency pointing inwards.
 
@@ -81,7 +82,8 @@ With this style we have:
 
 One way to explain the Hexagonal Architecture is by its shapes. Take a look at the following picture:
 
-![](/img/hexagonal-1.png)  
+<img class="img-fluid" src="/img/hexagonal-1.png" alt="Hexagonal">
+<span class="caption text-muted">Hexagonal</span>
 
 *   The blue potato shape at the center is the Domain Layer and there are reasons for it. Every business domain has its own rules, very specific business rules, that is the reason of its undefined shape. For example, I designed our Domain Layer with DDD Building Blocks.
 *   The application has an hexagonal shape because each of its sides has specifics protocols.
@@ -95,7 +97,9 @@ The direction of the dependencies goes inwards the center, so the Domain Layer d
 
 Let's describe the Dependency Diagram below:
 
-![](/img/Untitled-Diagram-1.png)
+<img class="img-fluid" src="/img/Untitled-Diagram-1.png" alt="Dependencies Diagram">
+<span class="caption text-muted">Dependencies Diagram</span>
+
 ----------------------------------------------------------------------------
 
 *   The Domain Layer is totally independent of other layers and frameworks.
@@ -115,11 +119,13 @@ Let's dig into the Application Business Rules implemented by the Use Cases in ou
 
 Use Cases implementations are first-class modules in the root of this layer. The shape of a Use Case is an **Interactor** object that receives an **Input**, do some work then pass the **Output** through the caller. That's the reason I am an advocate of feature folders describing the use cases and inside them the necessary classes:
 
-![](/img/Use-Cases.png)
+<img class="img-fluid" src="/img/Use-Cases.png" alt="Use Cases">
+<span class="caption text-muted">Use Cases</span>
 
 At your first look of the solution folders, you can build an idea of the purpose of this software. It seems like it can manage your Banck Account, for example you can Deposit or Withdraw money. Following we see the communication between the layers:
 
-![](/img/Clean-Architecture-Style.png)
+<img class="img-fluid" src="/img/Clean-Architecture-Style.png" alt="Clean Architecture Style">
+<span class="caption text-muted">Clean Architecture Style</span>
 
 The Application exposes an interface (Port) to the UI Layer and another interface (another Port) to the Infrastructure Layer. What have you seen until here is **Enterprise + Application Business Rules** enforced without frameworks dependencies or without database coupling. Every details has abstractions protecting the Business Rules to be coupled to tech stuff.
 
@@ -128,7 +134,8 @@ Adapters for the User Interface
 
 Now we advance to the next layer, at the User Interface Layer we translate the input in a way that the Use Cases can understand, it is good practice to do not reuse entities in this layer because it could create coupling, the front-end has specific frameworks, other ways of creating its data structures, different presentation for each field and validation rules. In our implementation we have the following feature folders for every use case:
 
-![](/img/Web-Use-Cases.png)
+<img class="img-fluid" src="/img/Web-Use-Cases.png" alt="Use Cases">
+<span class="caption text-muted">Use Cases</span>
 
 *   **Request**: a data structure for the user input (accountId and amount).
 *   **A Controller with an Action**: this component receives the DepositRequest, calls the appropriate Deposit Use Case which do some processing then pass the output through the Presenter instance.
@@ -148,7 +155,8 @@ Adapters for the Infrastructure
 
 Another external layer is the Infrastructure Layer that implements Data Access, Dependency Injection Framework (DI) and other frameworks specifics. In this example we have multiple data access implementations.
 
-![](/img/Infrastructure.png)
+<img class="img-fluid" src="/img/Infrastructure.png" alt="Infrastructure">
+<span class="caption text-muted">Infrastructure</span>
 
 How and When the DI is configured
 ---------------------------------

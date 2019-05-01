@@ -8,7 +8,8 @@ redirect_from:
 ---
 In my previous blog posts you could see [Clean Architecture](https://paulovich.net/clean-architecture-for-net-applications/) and [Hexagonal](https://paulovich.net/hexagonal-architecture-dot-net/) implementations. Continuing this series I am going deeper on the Domain Layer, through my journey of building rich domain models I had bad and good experiences that now I would like to share with you. These are my opinionated approaches that could streamline your learning process. What are the business rules? The business rules would make or save the business money, irrespective of whether they were implemented on a computer or manually. This kind of rules are simple to be described in words as they do not require a database, in fact the database are just an _IO device that our software requires_ to persist state. We could say the same about the Web, the way we present the information to our users has nothing to do with the business rules. That is the mine mindset but what I find in our industry is a mix of business, persistence and frameworks.
 
-[![Photo by li tzuni on Unsplash](/img/li-tzuni-507346-unsplash.jpg)](/img/li-tzuni-507346-unsplash.jpg)
+<img class="img-fluid" src="/img/li-tzuni-507346-unsplash.jpg" alt="Photo by li tzuni on Unsplash">
+<span class="caption text-muted">Photo by li tzuni on Unsplash</span>
 
 Photo by li tzuni on Unsplash\[/caption\] To begin we need to understand the code issues we want to avoid before decide to invest time and effort on building rich domains models. The code issues I am referring to are known as code smells, and they are associated with architecture and development problems.
 
@@ -49,7 +50,8 @@ How to Enrich Domain Models?
 
 The reason we invest effort on enrich the Domain is to prove it's viability, we can do a lot of work without worrying about the database or presentations concerns.
 
-[![Photo by Victor Freitas on Unsplash](/img/victor-freitas-593843-unsplash.jpg)](/img/victor-freitas-593843-unsplash.jpg)
+<img class="img-fluid" src="/img/victor-freitas-593843-unsplash.jpg" alt="Photo by Victor Freitas on Unsplash">
+<span class="caption text-muted">Photo by Victor Freitas on Unsplash</span>
 
 Photo by Victor Freitas on Unsplash\[/caption\] To design a rich model we need to concern only on business policies, all the external details like Databases, HTTP and serialization will be addressed later. In our example, we define the business with the following use cases and requirements:
 

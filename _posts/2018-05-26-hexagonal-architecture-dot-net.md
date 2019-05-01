@@ -56,12 +56,13 @@ For the following example checkout the concepts:
 
 To clarify the idea I created the next picture with the before and after applying DIP:
 
-![](/img/DIP-1-2.png) 
+<img class="img-fluid" src="/img/DIP-1-2.png" alt="DIP">
+<span class="caption text-muted">DIP</span>
 
 *   On the left side of the next picture we find in blue an Layered Application where the DepositService depends on AccountSQLRepository.
 *   And on the right side in green, by adding an IAccountRepository and applying DIP then the AccountSQLRepository has your dependency pointing inwards. aaaaa
 
-The following listing of DepositService shows an implementation. Suggestion: clone the [Acerola repo](https://github.com/ivanpaulovich/acerola-hexagonal-architecture) for the full implementation.
+The following listing of DepositService shows an implementation. Suggestion: clone the [Acerola repository](https://github.com/ivanpaulovich/acerola-hexagonal-architecture) for the full implementation.
 
 ```
 public class DepositService : IDepositService
@@ -134,7 +135,8 @@ The direction of the dependencies goes inwards the center, so the Domain Layer d
 
 Let's describe the Dependency Layer Diagram below:
 
-[![](/img/Untitled-Diagram-1.png)](/img/Untitled-Diagram-1.png)
+<img class="img-fluid" src="/img/Untitled-Diagram-1.png" alt="Dependency Layer Diagram">
+<span class="caption text-muted">Dependency Layer Diagram</span>
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 *   The domain is totally independent of other layers and frameworks.

@@ -18,7 +18,8 @@ $ dotnet new clean \
 
 As the SOLID principles and the Clean Architecture rules are worth to write about it, I am starting this blogging series explaining the decisions we have made through the development of the Manga Project. Feedback are welcome! Clean Architecture [expects at least 4 layers](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html) and in each layer there are common components. Starting with the layers from inside to the outer ones: 
 
-[![Clean Architecture Diagram by Uncle Bob](/img/CleanArchitecture-Uncle-Bob.jpg)](/img/CleanArchitecture-Uncle-Bob.jpg) 
+<img class="img-fluid" src="/img/CleanArchitecture-Uncle-Bob.jpg" alt="Clean Architecture Diagram by Uncle Bob">
+<span class="caption text-muted">Clean Architecture Diagram by Uncle Bob</span>
 
 1.  Enterprise Business Rules
 2.  Application Business Rules
@@ -32,7 +33,8 @@ Let's talk about on how we implemented this layers in the Manga Project!
 
 Beginning with the Enterprise Business Rules Layer we are talking about Aggregates, Entities, Value Objects and others patterns of a rich Domain. In our specific Bounded Context we have the Customer and the Account as **Aggregate Roots**, also the Credit/Debit transactions as **Entities** and last but no least we have the Name, Person Number and Amount as **Value Objects**. 
 
-[![](/img/Account-Balance-Context.png)](/img/Account-Balance-Context.png)
+<img class="img-fluid" src="/img/Account-Balance-Context.png" alt="Account Balance">
+<span class="caption text-muted">Account Balance</span>
 
 In short words, the previous components are the business entities that encapsulates fields and prevents unexpected changes or behaviors, these components maintain the application state in the most reliable way. Now, let me highlight some characteristics of this data structures:
 
@@ -80,7 +82,8 @@ Let's move to the Application Business Rules Layer that contains the Use Cases o
 
 So our Use Cases implementations are first-class modules in the root of this layer. The shape of a Use Case is an **Interactor** object that receives an **Input**, do some work then pass the **Output** through the currently **Presenter** instance as shown in the following figure:
 
-[![](/img/Flow-Of-Control.png)](/img/Flow-Of-Control.png)
+<img class="img-fluid" src="/img/Flow-Of-Control.png" alt="Flow of Control">
+<span class="caption text-muted">Flow of Control</span>
 
 In the previous Flow of Control we have:
 
@@ -331,11 +334,13 @@ And finally everything is tied together with configurations in the **autofac.jso
 
 Summing up, we separated the Solution in projects so we could draw boundaries between the modules, clarify the dependencies and we have small classes that makes easy to create new features without changing the existing ones. These are the Solution Explorer in Visual Studio 2017:
 
-[![](/img/Manga-Solution-Explorer.png)](/img/Manga-Solution-Explorer.png)
+<img class="img-fluid" src="/img/Manga-Solution-Explorer.png" alt="Solution Explorer">
+<span class="caption text-muted">Solution Explorer</span>
 
 And to help you understand the dependencies between the projects this diagram:
 
-[![](/img/Layers.png)](/img/Layers.png)
+<img class="img-fluid" src="/img/Layers.png" alt="Layers">
+<span class="caption text-muted">Layers</span>
 
 Finally, as we did not cover every detail in source code take a look at.
 
@@ -347,7 +352,8 @@ dotnet run
 
 Or by:
 
-[![](/img/dotnet-new-caju-0.2.84.gif)](/img/dotnet-new-caju-0.2.84.gif)
+<img class="img-fluid" src="/img/dotnet-new-caju-0.2.84.gif" alt="dotnet new caju">
+<span class="caption text-muted">dotnet new caju</span>
 
 I hope that this template could improve your productivity in building applications with evolutionary architecture.
 
