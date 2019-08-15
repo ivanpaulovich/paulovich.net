@@ -2,6 +2,9 @@
 layout: post
 title:  "Clean Architecture and TDD"
 date: 2019-02-19T06:12:52+02:00
+author: ivanpaulovich
+categories: [ TDD ]
+image: assets/images/17.jpg
 ---
 Nowadays all software development companies are self-titled Agile (if you are not Agile you are not cool right?). Most companies are following the SCRUM ceremonies, they adopted small developers teams, they have a SM and PO roles. 
 
@@ -39,8 +42,7 @@ Now... suppose that we wish to design a software architecture that prioritize co
 
 What if we could focus on business requirements and ignore everything else? The idea behind "Ports and Adapters" is to decouple the high level modules from the low level modules, in simple terms you could decouple the business rules from the database and user interface.
 
-<img class="img-fluid" src="/img/hexagonal-architecture/hexagonal-architecture.png" alt="Hexagonal Architecture">
-<span class="caption text-muted">Hexagonal Architecture.</span>
+![Hexagonal Architecture]({{ site.baseurl }}/img/hexagonal-architecture/hexagonal-architecture.png)
 
 As you can see on the left side there are driving actors:
 
@@ -64,23 +66,19 @@ The benefit of "Ports and Adapters" is that the application use cases could be i
 
 > What about the driving actors? When should I implement them?
 
-<img class="img-fluid" src="/img/hexagonal-architecture/guided-by-tests-1.png" alt="First Step">
-<span class="caption text-muted">First Step</span>
+![First Step]({{ site.baseurl }}/img/hexagonal-architecture/guided-by-tests-1.png)
 
 The **first driving adapter** you should implement are the **Test Harness**. And to run tests you don't need an user inteface, see how you don't need to worry about button colors and font faces? These tests will guide the use case implementation against a mocked database.
 
-<img class="img-fluid" src="/img/hexagonal-architecture/guided-by-tests-2.png" alt="Second Step">
-<span class="caption text-muted">Second Step</span>
+![Second Step]({{ site.baseurl }}/img/hexagonal-architecture/guided-by-tests-2.png)
 
 With the knowledge acquired by the unit tests implementation you can more confident design the **User Interface** then get user feedback. Every stage is a learning process, be open to change the use cases implementation and test harness at anytime!
 
-<img class="img-fluid" src="/img/hexagonal-architecture/guided-by-tests-3.png" alt="Third Step">
-<span class="caption text-muted">Third Step</span>
+![Third Step]({{ site.baseurl }}/img/hexagonal-architecture/guided-by-tests-3.png)
 
 You now can go deeper in details and implement how the application consume the database, and you can run your existing tests against this secondary actor. Should I say that you will do small changes in the application use cases to support this new adapter? You will!
 
-<img class="img-fluid" src="/img/hexagonal-architecture/guided-by-tests-4.png" alt="Final Step">
-<span class="caption text-muted">Final Step</span>
+![Final Step]({{ site.baseurl }}/img/hexagonal-architecture/guided-by-tests-4.png)
 
 The last step you run the **User Interface** against a real database implementation and get more feedback!
 
@@ -94,4 +92,4 @@ Agile methodology is not about doing things quickly without quality. When design
 
 > The only way to go fast is to go well. Every time you yeild to the temptation to trade quality for speed, you slow down. Every time. Uncle Bob.
 
-Software should be implemented incrementally and on every sprint you should acquire business knowleadge that help you be effective on the next sprint.
+Software should be implemented incrementally and on every sprint you should acquire business knowledge that help you be effective on the next sprint.

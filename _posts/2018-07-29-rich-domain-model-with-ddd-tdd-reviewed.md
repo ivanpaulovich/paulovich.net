@@ -5,6 +5,9 @@ date: 2018-07-29T06:12:52+02:00
 permalink: /rich-domain-model-with-ddd-tdd-reviewed/
 redirect_from:
   - /posts/rich-domain-model-with-ddd-tdd-reviewed/
+author: ivanpaulovich
+categories: [ DDD ]
+image: assets/images/17.jpg
 ---
 Through my journey of building Domain Models I had good and bad experiences that today I share with you to save a few hours of your development time. These are opinionated approaches that I follow when building Rich Domain Models. A Rich Domain Model is the technical part when applying DDD, it envolves the building blocks like Entity, Value Objects and Aggregate Root. The goal is to build a ubiquitous language between developers and stakeholders using the a vocabulary that describes the business rules. What are the business rules? Its what's make or save money, irrespective of whether they were implemented on a computer or manually. This kind of rules are simple to be described in words as they do not require a database, in fact the database is just an _IO device that our software requires_ to persist state. We could say the same about the Web, it is only a delivery mechanism to present information to our users and has nothing to do with the business rules. Having that clear is my way of thinking but what I find in our industry is a spaghetti of business rules, persistence libraries and frameworks code. In the next few topics I'm going to expose code issues we want to avoid before you decide to invest time building rich domains models . The code issues I am referring to are known as code smells, and they are associated with architecture and development problems.
 
@@ -17,13 +20,11 @@ The opposite of the Rich Domain Models are the Anemic Domain Models, in this sec
 
 It’s the situation where a client class access the fields of another class more than it's own data. In order to keep the policies of the second class consistent the consumer needs to validate and manipulate multiple fields together. This code smell is easy to find when "Application Services" or "Extension Methods" are envy of other Entities fields. These application services implement the policies that should be managed by the Entities classes. Just like this:
 
-<img class="img-fluid" src="/img/envy.png" alt="Envy">
-<span class="caption text-muted">Envy</span>
+![Envy]({{ site.baseurl }}/img/envy.png)
 
 The solution for this code smell is to move the envy method into the class that owns the data then hide the internal details. 
 
-<img class="img-fluid" src="/img/feature-envy-fixed.png" alt="Envy">
-<span class="caption text-muted">Feature Envy Fixed</span>
+![Feature Envy Fixed]({{ site.baseurl }}/img/feature-envy-fixed.png)
 
 ### Primitive Obsession
 
@@ -79,8 +80,7 @@ We are going to learn by example, next you see some business rules then the impl
 
 We could identify the following DDD patterns for these business:
 
-<img class="img-fluid" src="/img/model.png" alt="Model">
-<span class="caption text-muted">Model</span>
+![Model]({{ site.baseurl }}/img/model.png)
 
 *   **Aggregate Roots:** Customer and Account.
 *   **Entities:** Credit and Debit.

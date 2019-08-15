@@ -2,6 +2,9 @@
 layout: post
 title:  "Clean Architecture Essentials - Part I"
 date: 2019-04-20T06:12:52+02:00
+author: ivanpaulovich
+categories: [ CleanArchitecture ]
+image: assets/images/17.jpg
 ---
 I have been following the Clean Architecture principles on the [todo](https://github.com/ivanpaulovich/todo) development and I would like to share my experience with you. The strategies and decisions I have made could help you in future projects.
 

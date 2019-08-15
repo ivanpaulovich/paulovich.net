@@ -6,6 +6,9 @@ categories: jekyll update
 permalink: /check-out-these-awesome-hexagonal-and-clean-architectures-implementations/
 redirect_from:
   - /posts/check-out-these-awesome-hexagonal-and-clean-architectures-implementations/
+author: ivanpaulovich
+categories: [ CleanArchitecture ]
+image: assets/images/17.jpg
 ---
 I am releasing an new version of my [Architecture Templates for dotnet new](https://dotnetnew.azurewebsites.net/pack/Paulovich.Caju). We are working on testing, compatibility and documentation.
 

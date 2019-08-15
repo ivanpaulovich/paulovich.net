@@ -5,6 +5,9 @@ date: 2018-05-26T06:12:52+02:00
 permalink: /hexagonal-architecture-dot-net/
 redirect_from:
   - /posts/hexagonal-architecture-dot-net/
+author: ivanpaulovich
+categories: [ CleanArchitecture ]
+image: assets/images/17.jpg
 ---
 The feedback of the [Clean Architecture for .NET Applications](https://paulovich.net/clean-architecture-for-net-applications/) made me feel like I needed to take a step back and introduce some concepts first, so I will present my implementation of Hexagonal Architecture to make easier to understand them completely. Unfortunately in my previous experiences in different companies, remain very common that applications are built on top of frameworks and databases. I see that many developers are used to implement software that mimics the data tables instead of design software driven by the business domain. As time goes by, the software becomes highly coupled to these external details and what happens next is the application evolution been dictated by what the vendors support. Hexagonal Architecture (aka Ports and Adapters) is one strategy to decouple the use cases from the external details. It was coined by [Alistar Cockburn](http://alistair.cockburn.us/Hexagonal+architecture) more than 13 years ago, and it is getting better with the Onion and Clean Architectures. Let me introduce the Hexagonal Architecture's intent:
 
@@ -56,8 +59,7 @@ For the following example checkout the concepts:
 
 To clarify the idea I created the next picture with the before and after applying DIP:
 
-<img class="img-fluid" src="/img/DIP-1-2.png" alt="DIP">
-<span class="caption text-muted">DIP</span>
+![DIP]({{ site.baseurl }}/img/DIP-1-2.png)
 
 *   On the left side of the next picture we find in blue an Layered Application where the DepositService depends on AccountSQLRepository.
 *   And on the right side in green, by adding an IAccountRepository and applying DIP then the AccountSQLRepository has your dependency pointing inwards. aaaaa
@@ -122,7 +124,7 @@ With this style we have:
 
 One way to explain the Hexagonal Architecture is by its shapes. Take a look at the following picture:
 
-![](/img/hexagonal-1.png)  
+![Hexagonal]({{ site.baseurl }}/img/hexagonal-1.png)
 
 *   The blue potato shape at the center is the Domain and there are reasons for it. Every business domain has its own rules, different specifications from each other, that is the reason of its undefined shape. For instance, I designed our Domain Layer with DDD Patterns.
 *   The application has an hexagonal shape because each of its sides has specifics protocols, in our example we have **Commands** and **Queries** giving access to the Application.
@@ -135,8 +137,8 @@ The direction of the dependencies goes inwards the center, so the Domain Layer d
 
 Let's describe the Dependency Layer Diagram below:
 
-<img class="img-fluid" src="/img/Untitled-Diagram-1.png" alt="Dependency Layer Diagram">
-<span class="caption text-muted">Dependency Layer Diagram</span>
+![Dependency Layer Diagram]({{ site.baseurl }}/img/Untitled-Diagram-1.png)
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------
 
 *   The domain is totally independent of other layers and frameworks.

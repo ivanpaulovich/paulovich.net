@@ -1,22 +1,60 @@
-title: paulovich.NET
-email: ivan@paulovich.net
-description:       Software Architecture
-author:            Ivan Paulovich
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: ivanpaulovich
-github_username:  ivanpaulovich
-linkedin_username:  ivanpaulovich
-instagram_username:  ivanpaulovich
+# Site
+name: "Paulovich.NET"
+title: "Software Architecture and .NET Development"
+description: "Software Architecture and .NET Development"
+logo: 'assets/images/logo.png'
+favicon: 'assets/images/logo.png'
+baseurl: ""
+disqus: 'paulovichdotnet'
+mailchimp-list: 'https://paulovich.us3.list-manage.com/subscribe/post?u=3908a479dc89ce5adc26cc8c5&amp;id=9275121da4'
+include: ["_pages"]
+permalink: /:title/
 
-disqus: paulovichdotnet
+# Authors
+authors:
+  ivanpaulovich:
+    name: Ivan Paulovich
+    display_name: Ivan Paulovich
+    gravatar: 8821ecd598e75afc5f9f33eac6cabb0d
+    email: ivan@paulovich.net
+    web: https://paulovich.net
+    twitter: https://twitter.com/ivanpaulovich
+    description: "Agile .NET developer focused on Clean architecture. I enjoy implementing solutions based on use cases and decoupled from technology details."
 
-# Build settings
-markdown: kramdown
-theme: jekyll-theme-clean-blog
-paginate:          5
-paginate_path:     "/posts/page:num/"
+# Plugins
 plugins:
-  - jekyll-feed
   - jekyll-paginate
-  - jekyll-redirect-from
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-archives
+    
+# Archives
+jekyll-archives:
+  enabled:
+    - categories
+  layout: archive
+  permalinks:
+    category: '/category/:name/'
+    
+# Pagination 
+paginate: 6
+paginate_path: /page:num/
+    
+# Other
+markdown: kramdown
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+# Lazy Images ("enabled" or "disabled")
+lazyimages: "enabled"
+
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
+
+include:
+  - assets

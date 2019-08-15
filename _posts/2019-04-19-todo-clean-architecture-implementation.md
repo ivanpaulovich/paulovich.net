@@ -2,11 +2,13 @@
 layout: post
 title:  "todo: My new Clean Architecture implementation"
 date: 2019-04-19T06:12:52+02:00
+author: ivanpaulovich
+categories: [ CleanArchitecture ]
+image: assets/images/17.jpg
 ---
 I released a dotnet tool to manage tasks via the comnand line. The tasks are stored in a `secret gist` in your own GitHub account. Checkout a few commands:
 
-<img class="img-fluid" src="/img/todo-exported.png" alt="todo">
-<span class="caption text-muted">Todo running in the terminal.</span>
+![Todo running in the terminal]({{ site.baseurl }}/img/todo-exported.png)
 
 If you have your machine up to date with the [latest .NET Core SDK](https://dotnet.microsoft.com/download/dotnet-core/2.2) and you are interest to see `todo` in action please run:
 
