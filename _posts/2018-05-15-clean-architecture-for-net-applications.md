@@ -7,7 +7,7 @@ redirect_from:
   - /posts/clean-architecture-for-net-applications/
 author: ivanpaulovich
 categories: [ cleanarchitecture ]
-image: assets/images/17.jpg
+image: assets/img/photo-1432067276699-58cc294974c9.jpeg
 ---
 I'd like to introduce my service template for .NET Applications based on the Clean Architecture style. You can download the full [source code](https://github.com/ivanpaulovich/manga-clean-architecture) or you can play with the [dotnet new caju](https://github.com/ivanpaulovich/dotnet-new-caju) tool using the following commands:
 

@@ -4,7 +4,7 @@ title: "Clean Architecture Implementation Sample With .NET"
 date: 2019-03-10T06:12:52+02:00
 author: ivanpaulovich
 categories: [ cleanarchitecture ]
-image: assets/images/17.jpg
+image: assets/img/photo-1443219039328-224ed0298799.jpeg
 featured: true
 ---
 Hi all, I started a new open source project about [Clean Architecture with .NET](https://github.com/ivanpaulovich/dotnet-clean-architecture) and I invite you all to check out! 
