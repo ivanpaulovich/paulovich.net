@@ -22,4 +22,3 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: _site
   committer-from-gh: true
-  repo: ivanpaulovich/ivanpaulovich.github.io
