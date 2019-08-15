@@ -1,3 +1,4 @@
+dist: trusty
 language: ruby
 cache: bundler
 sudo: false
@@ -22,3 +23,6 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: _site
   committer-from-gh: true
+  repo: ivanpaulovich/ivanpaulovich.github.io
+  target_branch: master
+  fqdn: paulovich.net
