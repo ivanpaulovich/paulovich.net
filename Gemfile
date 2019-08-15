@@ -7,6 +7,9 @@ source "https://rubygems.org"
 #     bundle exec jekyll serve
 #
 
+gem "jekyll"
+gem "html-proofer"
+
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 group :jekyll_plugins do
