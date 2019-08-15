@@ -6,7 +6,7 @@ permalink: /hexagonal-architecture-dot-net/
 redirect_from:
   - /posts/hexagonal-architecture-dot-net/
 author: ivanpaulovich
-categories: [ CleanArchitecture ]
+categories: [ cleanarchitecture ]
 image: assets/images/17.jpg
 ---
 The feedback of the [Clean Architecture for .NET Applications](https://paulovich.net/clean-architecture-for-net-applications/) made me feel like I needed to take a step back and introduce some concepts first, so I will present my implementation of Hexagonal Architecture to make easier to understand them completely. Unfortunately in my previous experiences in different companies, remain very common that applications are built on top of frameworks and databases. I see that many developers are used to implement software that mimics the data tables instead of design software driven by the business domain. As time goes by, the software becomes highly coupled to these external details and what happens next is the application evolution been dictated by what the vendors support. Hexagonal Architecture (aka Ports and Adapters) is one strategy to decouple the use cases from the external details. It was coined by [Alistar Cockburn](http://alistair.cockburn.us/Hexagonal+architecture) more than 13 years ago, and it is getting better with the Onion and Clean Architectures. Let me introduce the Hexagonal Architecture's intent:

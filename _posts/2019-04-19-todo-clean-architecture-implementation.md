@@ -3,7 +3,7 @@ layout: post
 title:  "todo: My new Clean Architecture implementation"
 date: 2019-04-19T06:12:52+02:00
 author: ivanpaulovich
-categories: [ CleanArchitecture ]
+categories: [ cleanarchitecture ]
 image: assets/images/17.jpg
 ---
 I released a dotnet tool to manage tasks via the comnand line. The tasks are stored in a `secret gist` in your own GitHub account. Checkout a few commands:

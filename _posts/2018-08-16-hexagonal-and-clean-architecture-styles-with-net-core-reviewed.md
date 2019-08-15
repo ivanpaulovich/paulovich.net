@@ -6,7 +6,7 @@ permalink: /hexagonal-and-clean-architecture-styles-with-net-core-reviewed/
 redirect_from:
   - /posts/hexagonal-and-clean-architecture-styles-with-net-core-reviewed/
 author: ivanpaulovich
-categories: [ CleanArchitecture ]
+categories: [ cleanarchitecture ]
 image: assets/images/17.jpg
 ---
 Unfortunately remain very common that applications are built on top of frameworks and databases. I see that developers usually implement software that mimics the data tables instead of design software driven by the business domain. As time goes by, the software becomes highly coupled to these external details and what happens next is the application evolution been dictated by the vendors support. Hexagonal Architecture (aka Ports and Adapters) is one strategy to decouple the use cases from the external details. It was coined by Alistar Cockburn more than 13 years ago, and this received improvements with the Onion and Clean Architectures. Let me introduce the Hexagonal Architecture's intent:

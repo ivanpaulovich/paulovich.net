@@ -3,7 +3,7 @@ layout: post
 title: "Clean Architecture Implementation Sample With .NET"
 date: 2019-03-10T06:12:52+02:00
 author: ivanpaulovich
-categories: [ CleanArchitecture ]
+categories: [ cleanarchitecture ]
 image: assets/images/17.jpg
 featured: true
 ---

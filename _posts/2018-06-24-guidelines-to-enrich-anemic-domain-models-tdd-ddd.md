@@ -6,7 +6,7 @@ permalink: /guidelines-to-enrich-anemic-domain-models-tdd-ddd/
 redirect_from:
   - posts/guidelines-to-enrich-anemic-domain-models-tdd-ddd/
 author: ivanpaulovich
-categories: [ DDD ]
+categories: [ ddd ]
 image: assets/images/17.jpg
 ---
 In my previous blog posts you could see [Clean Architecture](https://paulovich.net/clean-architecture-for-net-applications/) and [Hexagonal](https://paulovich.net/hexagonal-architecture-dot-net/) implementations. Continuing this series I am going deeper on the Domain Layer, through my journey of building rich domain models I had bad and good experiences that now I would like to share with you. These are my opinionated approaches that could streamline your learning process. What are the business rules? The business rules would make or save the business money, irrespective of whether they were implemented on a computer or manually. This kind of rules are simple to be described in words as they do not require a database, in fact the database are just an _IO device that our software requires_ to persist state. We could say the same about the Web, the way we present the information to our users has nothing to do with the business rules. That is the mine mindset but what I find in our industry is a mix of business, persistence and frameworks.

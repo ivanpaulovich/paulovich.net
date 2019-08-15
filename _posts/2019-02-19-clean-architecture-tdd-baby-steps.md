@@ -3,7 +3,7 @@ layout: post
 title:  "Clean Architecture and TDD"
 date: 2019-02-19T06:12:52+02:00
 author: ivanpaulovich
-categories: [ TDD ]
+categories: [ tdd ]
 image: assets/images/17.jpg
 ---
 Nowadays all software development companies are self-titled Agile (if you are not Agile you are not cool right?). Most companies are following the SCRUM ceremonies, they adopted small developers teams, they have a SM and PO roles. 

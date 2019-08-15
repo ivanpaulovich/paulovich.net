@@ -6,7 +6,7 @@ permalink: /check-out-these-awesome-hexagonal-and-clean-architectures-implementa
 redirect_from:
   - /posts/check-out-these-awesome-hexagonal-and-clean-architectures-implementations/
 author: ivanpaulovich
-categories: [ CleanArchitecture ]
+categories: [ cleanarchitecture ]
 image: assets/images/17.jpg
 ---
 [Filipe Augusto](https://www.linkedin.com/in/filipe-augusto-lima-de-souza-95a16833/) and I have been designing architectures and adapting legacy systems to more sophisticated market standards for a few years. Software Architecture is not a snapshot, it is a living thing and after several proofs of concept in real world systems, we come to some implementations that cover different scenarios.
