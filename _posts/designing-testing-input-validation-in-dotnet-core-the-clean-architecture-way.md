@@ -492,4 +492,6 @@ I would not use it for Value Objects amd Input Messages validation.
 
 ## Conclusion
 
+Use the frameworks with cautions, implement the business validation inside the Domain and clean up fat methods replacing primitive objects with proper Value Objects. Happy Codding!
 
+Aggre/Disagree?
