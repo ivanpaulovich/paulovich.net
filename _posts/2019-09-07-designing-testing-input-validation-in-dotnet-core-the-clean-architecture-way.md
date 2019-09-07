@@ -93,7 +93,7 @@ public sealed class RegisterRequest
 
 The immediate benefit is that Validation is built in ASP.NET Core, completely integrated with Swagger (Open API Specification). 
 
-![Feature Envy Fixed]({{ site.baseurl }}/img/assets/bad-request.png)
+![Feature Envy Fixed]({{ site.baseurl }}/assets/img/bad-request.png)
 
 ### 2. Validating fields format in the Domain Layer
 
@@ -500,7 +500,7 @@ Use the frameworks with cautions, implement the business validation inside the D
 
 Want to see it in action? The demo is runnning on Heroku:
 
-[![Clean Architecture Manga Swagger]({{ site.baseurl }}/img/assets/clean-architecture-manga-swagger.png)](https://clean-architecture-manga.herokuapp.com/swagger/index.html)
+[![Clean Architecture Manga Swagger]({{ site.baseurl }}/assets/images/clean-architecture-manga-swagger.png)](https://clean-architecture-manga.herokuapp.com/swagger/index.html)
 
 Happy Codding!
 
