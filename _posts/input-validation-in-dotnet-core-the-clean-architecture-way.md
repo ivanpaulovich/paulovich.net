@@ -296,6 +296,20 @@ public sealed class RegisterInput
 }
 ```
 
+```c#
+
+public void Execute(
+        string ssn,
+        string name,
+        double initialAmount)
+{ 
+    if (string.IsNullOrWhiteSpace(firstName))
+        throw new NameShouldNotBeEmptyException("The 'firstName' field is required");
+
+}
+
+```
+
 ## How I use it?
 
 In the Web Layer the controller has an action that requires a `RegisterRequest` object, the action is responsible for creating the RegisterInput object then calling the use case.
