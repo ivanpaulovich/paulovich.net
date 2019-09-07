@@ -15,6 +15,36 @@ Wrong! Validation is the most common source of issues in Web applications. Let m
 * **Mixed Validation Code:** Every method is concerned about input validation. Complexity increases on every new feature added.
 * **Business Logic depedent on Frameworks:** Too much business code wrote using frameworks. What if we need to change the framework?
 
+Have you seen code like this?
+
+```c#
+
+public void Execute(
+        string ssn,
+        string name,
+        double initialAmount)
+{
+    if (string.IsNullOrWhiteSpace(ssn))
+        throw new SSNShouldNotBeEmptyException("The 'ssn' field is required");
+
+    Regex regex = new Regex(RegExForValidation);
+    Match match = regex.Match(ssn);
+
+    if (!match.Success)
+        throw new InvalidSSNException("Invalid SSN format. Use YYMMDDNNNN.");
+
+    if (string.IsNullOrWhiteSpace(name))
+        throw new NameShouldNotBeEmptyException("The 'name' field is required");
+        
+    if (value < 0)
+            throw new AmountShouldBePositiveException("The 'Amount' should be positive.");
+            
+    //
+    // do the use case logic
+    //
+}
+
+```
 ## What I suggest you to do?
 
 I suggest that we take leverage of frameworks and still write testable code. I would describe the steps as following:
@@ -294,20 +324,6 @@ public sealed class RegisterInput
         InitialAmount = initialAmount;
     }
 }
-```
-
-```c#
-
-public void Execute(
-        string ssn,
-        string name,
-        double initialAmount)
-{ 
-    if (string.IsNullOrWhiteSpace(firstName))
-        throw new NameShouldNotBeEmptyException("The 'firstName' field is required");
-
-}
-
 ```
 
 ## How I use it?
