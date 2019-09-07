@@ -249,3 +249,104 @@ public sealed class PositiveAmount : IEquatable<PositiveAmount>
     }
 }
 ```
+
+### 3. Validating fields format in the Domain Layer
+
+```c#
+public sealed class RegisterInput
+{
+    public SSN SSN { get; }
+    public Name Name { get; }
+    public PositiveAmount InitialAmount { get; }
+
+    public RegisterInput(SSN ssn, Name name, PositiveAmount initialAmount)
+    {
+        if (ssn == null)
+        {
+            throw new InputValidationException($"{nameof(ssn)} cannot be null.");
+        }
+
+        if (name == null)
+        {
+            throw new InputValidationException($"{nameof(name)} cannot be null.");
+        }
+
+        if (initialAmount == null)
+        {
+            throw new InputValidationException($"{nameof(initialAmount)} cannot be null.");
+        }
+
+        SSN = ssn;
+        Name = name;
+        InitialAmount = initialAmount;
+    }
+}
+```
+
+## How I use it?
+
+In the Web Layer the controller has an action that requires a `RegisterRequest` object, it is responsible for creating the RegisterInput object from the domain and calling the use case.
+
+```c#
+/// <summary>
+/// Register a customer
+/// </summary>
+/// <response code="200">The registered customer was create successfully.</response>
+/// <response code="400">Bad request.</response>
+/// <response code="500">Error.</response>
+/// <param name="request">The request to register a customer</param>
+/// <returns>The newly registered customer</returns>
+[HttpPost]
+[ProducesResponseType(StatusCodes.Status200OK, Type = typeof(RegisterResponse))]
+[ProducesResponseType(StatusCodes.Status400BadRequest)]
+[ProducesResponseType(StatusCodes.Status500InternalServerError)]
+[SwaggerRequestExample(typeof(RegisterRequest), typeof(GetCustomerDetailsRequestExample))]
+public async Task<IActionResult> Post([FromBody][Required] RegisterRequest request)
+{
+    var input = new RegisterInput(
+        new SSN(request.SSN),
+        new Name(request.Name),
+        new PositiveAmount(request.InitialAmount));
+
+    await _registerUseCase.Execute(input);
+
+    return _presenter.ViewModel;
+}
+```
+
+The beatiful of this approach is that the use cases can use Input objects and read the Value Objects which are always valid.
+
+```c#
+public sealed class Register : IUseCase
+{
+    // code ommited for simplication
+
+    public async Task Execute(RegisterInput input)
+    {
+        if (input == null)
+        {
+            _outputHandler.Error("Input is null.");
+            return;
+        }
+
+        var customer = _entityFactory.NewCustomer(input.SSN, input.Name);
+        var account = _entityFactory.NewAccount(customer);
+
+        ICredit credit = account.Deposit(_entityFactory, input.InitialAmount);
+        if (credit == null)
+        {
+            _outputHandler.Error("An error happened when depositing the amount.");
+            return;
+        }
+
+        customer.Register(account);
+
+        await _customerRepository.Add(customer);
+        await _accountRepository.Add(account, credit);
+        await _unitOfWork.Save();
+
+        RegisterOutput output = new RegisterOutput(customer, account);
+        _outputHandler.Standard(output);
+    }
+}
+```
