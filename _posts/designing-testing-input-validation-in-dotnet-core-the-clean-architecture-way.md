@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Input Validation in .NET Core: The Clean Architecture way"
+title:  "Designing and Testing Input Validation in .NET Core: The Clean Architecture way"
 date: 2019-04-20T06:12:52+02:00
 author: ivanpaulovich
 categories: [ cleanarchitecture, validation ]
@@ -426,6 +426,59 @@ public sealed class BusinessExceptionFilter : IExceptionFilter
             context.Exception = null;
         }
     }
+}
+```
+
+## Testing
+
+You can test from different perspectives. I would prioritize testing the Input objects from Unit Tests.
+
+```c#
+[Fact]
+public void GivenNullSSN_InputNotCreated_ThrowsInputValidationException()
+{
+    var actualEx = Assert.Throws<InputValidationException>(
+        () => new RegisterInput(
+            null,
+            new Name("Ivan"),
+            new PositiveAmount(10)
+        ));
+    Assert.Contains("ssn", actualEx.Message);
+}
+
+[Fact]
+public void GivenNullName_InputNotCreated_ThrowsInputValidationException()
+{
+    var actualEx = Assert.Throws<InputValidationException>(
+        () => new RegisterInput(
+            new SSN("19860817999"),
+            null,
+            new PositiveAmount(10)
+        ));
+    Assert.Contains("name", actualEx.Message);
+}
+
+[Fact]
+public void GivenNullPositiveAmount_InputNotCreated_ThrowsInputValidationException()
+{
+    var actualEx = Assert.Throws<InputValidationException>(
+        () => new RegisterInput(
+            new SSN("19860817999"),
+            new Name("Ivan"),
+            null
+        ));
+    Assert.Contains("initialAmount", actualEx.Message);
+}
+
+[Fact]
+public void GivenValidData_InputCreated()
+{
+    var actual = new RegisterInput(
+        new SSN("19860817999"),
+        new Name("Ivan"),
+        new PositiveAmount(10)
+    );
+    Assert.NotNull(actual);
 }
 ```
 
