@@ -397,6 +397,32 @@ public sealed class Register : IUseCase
 }
 ```
 
+## Throwing and Catching Exceptions
+
+You saw previously that the validation logic is throwing exceptions, so we need to catch them somewhere. I suggest you to add a filter on the Web layer and all Domain Exceptions are returned as `BadRequest` objects.
+
+```c#
+public sealed class BusinessExceptionFilter : IExceptionFilter
+{
+    public void OnException(ExceptionContext context)
+    {
+        DomainException domainException = context.Exception as DomainException;
+        if (domainException != null)
+        {
+            var problemDetails = new ProblemDetails
+            {
+                    Status = 400,
+                    Title = "Bad Request",
+                    Detail = domainException.Message
+            };
+
+            context.Result = new BadRequestObjectResult(problemDetails);
+            context.Exception = null;
+        }
+    }
+}
+```
+
 ## My Thoughts on Fluent Validation
 
 I see FluentValidation perfect fit for objects validation that I have not control on design. Suppose that I need to consume a old WCF service and the message has constraints on it. 
