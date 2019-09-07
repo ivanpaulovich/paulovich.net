@@ -23,4 +23,37 @@ I suggest that we take leverage of frameworks and still write testable code. I w
 2. Validate the fields values format (e-mail, phone number, personnummer).
 3. Validate if the combination of fields are valid.
 
-What if we could use the leverage of frameworks and still have testable code? What if the validation code was cared like first-class objects?
+Suppose that a system manages the Customer's Wallet Account. The first use case is `Register a Customer`, let's see how would be the validation steps:
+
+### 1. Validating fields in isolation with Data Annotations
+
+The Web layer is responsible for many things, we do not want to flood the Web with business logic. Let's keep the framework dependencies under control.
+
+So I would add only the `[Required]` attribute here. The benefit is that these attributes are automatically read by the ASP.NET framework for built in validation. The other benefit is that Swagger extensions use this information to generate the API description, it is too many benefits to avoid Data Annotations.
+
+The rule is:
+
+> Keep it simple.
+
+```c#
+public sealed class RegisterRequest
+{
+    /// <summary>
+    /// SSN
+    /// </summary>
+    [Required]
+    public string SSN { get; set; }
+
+    /// <summary>
+    /// Name
+    /// </summary>
+    [Required]
+    public string Name { get; set; }
+
+    /// <summary>
+    /// Initial Amount
+    /// </summary>
+    [Required]
+    public double InitialAmount { get; set; }
+}
+```
