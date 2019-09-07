@@ -91,6 +91,8 @@ public sealed class RegisterRequest
 }
 ```
 
+The immediate benefit is that Validation is built in in ASP.NET Core, completely integrated with Swagger (Open API Specification). 
+
 ### 2. Validating fields format in the Domain Layer
 
 Fiels data format validation is a business concern. For that reason I want them to be implemented in the Domain layer. My suggestion is that you add a folder for Value Objects with classes like this:
