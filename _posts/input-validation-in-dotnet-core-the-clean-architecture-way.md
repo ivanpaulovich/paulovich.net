@@ -15,7 +15,7 @@ Wrong! Validation is the most common source of issues in Web applications. Let m
 * **Mixed Validation Code:** Every method is concerned about input validation. Complexity increases on every new feature added.
 * **Business Logic depedent on Frameworks:** Too much business code wrote using frameworks. What if we need to change the framework?
 
-Have you seen code like this?
+Have you seen bad code like this?
 
 ```c#
 
@@ -45,6 +45,9 @@ public void Execute(
 }
 
 ```
+
+Read the next topics to learn how to cure this anaemia or navigate to [Guidelines to Enrich Anemic Domain Models with TDD/DDD](https://paulovich.net/guidelines-to-enrich-anemic-domain-models-tdd-ddd/) for more examples.
+
 ## What I suggest you to do?
 
 I suggest that we take leverage of frameworks and still write testable code. I would describe the steps as following:
