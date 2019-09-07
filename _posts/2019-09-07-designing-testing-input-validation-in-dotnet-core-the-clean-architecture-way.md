@@ -91,7 +91,9 @@ public sealed class RegisterRequest
 }
 ```
 
-The immediate benefit is that Validation is built in in ASP.NET Core, completely integrated with Swagger (Open API Specification). 
+The immediate benefit is that Validation is built in ASP.NET Core, completely integrated with Swagger (Open API Specification). 
+
+![Feature Envy Fixed]({{ site.baseurl }}/img/assets/bad-request.png)
 
 ### 2. Validating fields format in the Domain Layer
 
@@ -494,6 +496,12 @@ I would not use it for Value Objects amd Input Messages validation.
 
 ## Conclusion
 
-Use the frameworks with cautions, implement the business validation inside the Domain and clean up fat methods replacing primitive objects with proper Value Objects. Happy Codding!
+Use the frameworks with cautions, implement the business validation inside the Domain and clean up fat methods replacing primitive objects with proper Value Objects. 
 
-Aggre/Disagree?
+Want to see it in action? The demo is runnning on Heroku:
+
+[![Clean Architecture Manga Swagger]({{ site.baseurl }}/img/assets/clean-architecture-manga-swagger.png)](https://clean-architecture-manga.herokuapp.com/swagger/index.html)
+
+Happy Codding!
+
+Do you aggre/disagree?
