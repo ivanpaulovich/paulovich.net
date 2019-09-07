@@ -15,7 +15,7 @@ Wrong! Validation is the most common source of issues in Web applications. Let m
 * **Mixed Validation Code:** Every method is concerned about input validation. Complexity increases on every new feature added.
 * **Business Logic depedent on Frameworks:** Too much business code wrote using frameworks. What if we need to change the framework?
 
-## What I suggest to do?
+## What I suggest you to do?
 
 I suggest that we take leverage of frameworks and still write testable code. I would describe the steps as following:
 
@@ -61,6 +61,13 @@ public sealed class RegisterRequest
 ### 2. Validating fields format in the Domain Layer
 
 Fiels data format validation is a business concern. For that reason I want them to be implemented in the Domain layer. My suggestion is that you add a folder for Value Objects with classes like this:
+
+In Sweden the `Social Security Number` is called `Personnummer` and the format is YYMMDDNNNN. 
+
+* As instance of SSN only exists if it is valid.
+* It is immutable (without methods changing the `_text` property.
+* It is serializable.
+* It is unique by its internal property values.
 
 ```c#
 public sealed class SSN : IEquatable<SSN>
@@ -126,6 +133,8 @@ public sealed class SSN : IEquatable<SSN>
 }
 ```
 
+The name just need to be a string. We could change it to be more restrictive.
+
 ```c#
 public sealed class Name : IEquatable<Name>
 {
@@ -182,6 +191,8 @@ public sealed class Name : IEquatable<Name>
     }
 }
 ```
+
+The amount should be positive.
 
 ```c#
 public sealed class PositiveAmount : IEquatable<PositiveAmount>
@@ -252,6 +263,8 @@ public sealed class PositiveAmount : IEquatable<PositiveAmount>
 
 ### 3. Validating fields format in the Domain Layer
 
+The use cases accept Input messages and are made of Value Objects.
+
 ```c#
 public sealed class RegisterInput
 {
@@ -285,7 +298,7 @@ public sealed class RegisterInput
 
 ## How I use it?
 
-In the Web Layer the controller has an action that requires a `RegisterRequest` object, it is responsible for creating the RegisterInput object from the domain and calling the use case.
+In the Web Layer the controller has an action that requires a `RegisterRequest` object, the action is responsible for creating the RegisterInput object then calling the use case.
 
 ```c#
 /// <summary>
