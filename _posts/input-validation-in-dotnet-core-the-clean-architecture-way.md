@@ -363,3 +363,15 @@ public sealed class Register : IUseCase
     }
 }
 ```
+
+## My Thoughts on Fluent Validation
+
+I see FluentValidation perfect fit for objects validation that I have not control on design. Suppose that I need to consume a old WCF service and the message has constraints on it. 
+
+I would implement a custom FluentValidator on the infrastructure layer.
+
+I would not use it for Value Objects amd Input Messages validation.
+
+## Conclusion
+
+
