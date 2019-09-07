@@ -13,9 +13,14 @@ Wrong! Validation is the most common source of issues in Web applications. Let m
 
 * **Untestable Validation Code:** To test the validation logic it is required to write tests against the whole universe of combinations, it is not pratical.
 * **Mixed Validation Code:** Every method is concerned about input validation. Complexity increases on every new feature added.
-* **Business Logic depedent on Frameworks:** Too much business code written using frameworks. What happens if you need to change the framework?
+* **Business Logic depedent on Frameworks:** Too much business code wrote using frameworks. What if we need to change the framework?
 
 ## What I suggest?
 
-I suggest that we take leverage of frameworks and still write testable code.
+I suggest that we take leverage of frameworks and still write testable code. I would describe the steps as following:
+
+1. Validate the required fields and types in isolation.
+2. Validate the fields values format (e-mail, phone number, personnummer).
+3. Validate if the combination of fields are valid.
+
 What if we could use the leverage of frameworks and still have testable code? What if the validation code was cared like first-class objects?
