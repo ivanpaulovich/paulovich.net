@@ -333,6 +333,10 @@ public sealed class RegisterInput
 
 In the Web Layer the controller has an action that requires a `RegisterRequest` object, the action is responsible for creating the RegisterInput object then calling the use case.
 
+* The interesting about Request/Response objects is that they are made of serializable objects (eg. `int`, `double` and `string`). 
+* The Request/Response are responsible for carring the data from and back to the User. 
+* Of couse you can't trust it, you need to create Input objects.
+
 ```c#
 /// <summary>
 /// Register a customer
@@ -396,6 +400,8 @@ public sealed class Register : IUseCase
     }
 }
 ```
+
+Value Objects are powerful, you can use them everywhere in the Application/Domain layers and you know there are valid.
 
 ## Throwing and Catching Exceptions
 
