@@ -7,13 +7,13 @@ categories: [ cleanarchitecture, tdd, validation, ddd ]
 image: assets/images/norman-tsui-PoF0kgQm9hE-unsplash.jpg
 featured: true
 ---
-Almost every software requires some input validation implementation. Due to the importance there are frameworks and guidelines to help us complete the task, should not be dificult to write good validation code right?
+Almost every software requires some input validation implementation. Due to the importance there are frameworks and guidelines to help us complete the task, should not be difficult to write good validation code right?
 
 Wrong! Validation is the most common source of issues in Web applications. Let me explain the code smells:
 
-* **Untestable Validation Code:** To test the validation logic it is required to write tests against the whole universe of combinations, it is not pratical.
+* **Untestable Validation Code:** To test the validation logic it is required to write tests against the whole universe of combinations, it is not practical.
 * **Mixed Validation Code:** Every method is concerned about input validation. Complexity increases on every new feature added.
-* **Business Logic depedent on Frameworks:** Too much business code wrote using frameworks. What if we need to change the framework?
+* **Business Logic dependent on Frameworks:** Too much business code wrote using frameworks. What if we need to change the framework?
 
 Have you seen bad code like this?
 
@@ -97,7 +97,7 @@ The immediate benefit is that Validation is built in ASP.NET Core, completely in
 
 ### 2. Validating fields format in the Domain Layer
 
-Fiels data format validation is a business concern. For that reason I want them to be implemented in the Domain layer. My suggestion is that you add a folder for Value Objects with classes like this:
+Fields data format validation is a business concern. For that reason I want them to be implemented in the Domain layer. My suggestion is that you add a folder for Value Objects with classes like this:
 
 In Sweden the `Social Security Number` is called `Personnummer` and the format is YYMMDDNNNN. 
 
@@ -338,8 +338,8 @@ public sealed class RegisterInput
 In the Web Layer the controller has an action that requires a `RegisterRequest` object, the action is responsible for creating the RegisterInput object then calling the use case.
 
 * The interesting about Request/Response objects is that they are made of serializable objects (eg. `int`, `double` and `string`). 
-* The Request/Response are responsible for carring the data from and back to the User. 
-* Of couse you can't trust it, you need to create Input objects.
+* The Request/Response are responsible for carrying the data from and back to the User. 
+* Of course you can't trust it, you need to create Input objects.
 
 ```c#
 /// <summary>
@@ -368,7 +368,7 @@ public async Task<IActionResult> Post([FromBody][Required] RegisterRequest reque
 }
 ```
 
-The beatiful of this approach is that the use cases can use Input objects and read the Value Objects which are always valid.
+The beautiful of this approach is that the use cases can use Input objects and read the Value Objects which are always valid.
 
 ```c#
 public sealed class Register : IUseCase
@@ -498,10 +498,10 @@ I would not use it for Value Objects amd Input Messages validation.
 
 Use the frameworks with cautions, implement the business validation inside the Domain and clean up fat methods replacing primitive objects with proper Value Objects. 
 
-Want to see it in action? The demo is runnning on Heroku:
+Want to see it in action? The demo is running on Heroku:
 
 [![Clean Architecture Manga Swagger]({{ site.baseurl }}/assets/images/clean-architecture-manga-swagger.png)](https://clean-architecture-manga.herokuapp.com/swagger/index.html)
 
 Happy Codding!
 
-Do you aggre/disagree?
+Do you agree/disagree?
