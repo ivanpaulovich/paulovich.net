@@ -5,6 +5,7 @@ description: "Software Architecture and .NET Development"
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/logo.png'
 baseurl: ""
+google_analytics: 'UA-27176166-2'
 disqus: 'paulovichdotnet'
 mailchimp-list: 'https://paulovich.us3.list-manage.com/subscribe/post?u=3908a479dc89ce5adc26cc8c5&amp;id=9275121da4'
 include: ["_pages"]
