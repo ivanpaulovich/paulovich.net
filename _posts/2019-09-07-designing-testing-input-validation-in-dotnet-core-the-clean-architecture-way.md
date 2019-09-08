@@ -19,7 +19,7 @@ Have you seen bad code like this?
 
 ```c#
 
-public void Execute(
+public void RegisterCustomer(
         string ssn,
         string name,
         double initialAmount)
@@ -35,12 +35,12 @@ public void Execute(
 
     if (string.IsNullOrWhiteSpace(name))
         throw new NameShouldNotBeEmptyException("The 'name' field is required");
-        
+
     if (value < 0)
             throw new AmountShouldBePositiveException("The 'Amount' should be positive.");
-            
+
     //
-    // do the use case logic
+    // other logic implementation omitted
     //
 }
 
