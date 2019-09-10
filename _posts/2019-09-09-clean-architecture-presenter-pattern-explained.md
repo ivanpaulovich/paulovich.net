@@ -8,7 +8,7 @@ image: assets/images/norman-tsui-PoF0kgQm9hE-unsplash.jpg
 featured: true
 draft: true
 ---
-The easiest way to identify a poor designed Web application is by looking at their controllers, usually there is a mix of business rules and few View Models.
+The easiest way to identify a poor designed Web application is by looking at their controllers, usually there is a mix of business rules and View Models.
 The following code snippet calls a service to get the account details then the transaction list is exported to a excel spreadsheet. Check it out:
 
 ```c#
