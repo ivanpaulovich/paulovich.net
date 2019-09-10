@@ -5,7 +5,6 @@ date: 2019-09-07T06:12:52+02:00
 author: ivanpaulovich
 categories: [ cleanarchitecture, presenter ]
 image: assets/images/norman-tsui-PoF0kgQm9hE-unsplash.jpg
-featured: true
 draft: true
 ---
 The easiest way to identify a poor designed Web application is by looking at their controllers, usually there is a mix of business rules and View Models.
