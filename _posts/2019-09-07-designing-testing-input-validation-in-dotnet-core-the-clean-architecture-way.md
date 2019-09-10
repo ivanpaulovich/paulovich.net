@@ -5,7 +5,7 @@ date: 2019-09-07T06:12:52+02:00
 author: ivanpaulovich
 categories: [ cleanarchitecture, tdd, validation, ddd ]
 image: assets/images/norman-tsui-PoF0kgQm9hE-unsplash.jpg
-featured: true
+featured: false
 ---
 Almost every software requires some input validation implementation. Due to the importance there are frameworks and guidelines to help us complete the task, should not be difficult to write good validation code right?
 
