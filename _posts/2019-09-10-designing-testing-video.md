@@ -5,7 +5,6 @@ date: 2019-09-10T19:12:52+02:00
 author: ivanpaulovich
 categories: [ cleanarchitecture, tdd, video ]
 image: img/design-tests-video-thumb.jpg
-featured: true
 ---
 I started a new series of videos introducing Clean Architecture, Open Source and .NET Development.
 
