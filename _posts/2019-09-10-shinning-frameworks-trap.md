@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "hinning Frameworks and DDD?"
+title:  "Shinning Frameworks and DDD?"
 date: 2019-09-12T19:12:52+02:00
 author: ivanpaulovich
 categories: [ cleanarchitecture ]
