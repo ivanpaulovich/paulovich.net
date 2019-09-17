@@ -53,9 +53,6 @@ kramdown:
       line_numbers: true
 
 # Lazy Images ("enabled" or "disabled")
-lazyimages: "enabled"
+lazyimages: "disabled"
 
-exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock, vendor]
-
-include:
-  - assets
+exclude: [changelog.md, LICENSE.txt, README.md, Gemfile, Gemfile.lock]
