@@ -5,8 +5,13 @@ permalink: /about-ivan-paulovich
 comments: false
 ---
 
-<!-- Place this tag where you want the button to render. -->
-<a class="github-button" href="https://github.com/ivanpaulovich" data-show-count="true" aria-label="Follow @ivanpaulovich on GitHub">Follow @ivanpaulovich</a>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
+
+
+
+<script src="https://apis.google.com/js/platform.js"></script>
+
+
 
 <div class="row justify-content-between">
 <div class="col-md-8 pr-5">
@@ -94,6 +99,28 @@ comments: false
 
 <p>Let me know at <a href="mailto:ivan@paulovich.neet">ivan@paulovich.net</a>!</p>
 
+</div>
+
+<div class="col-md-4">
+
+<div class="sticky-top sticky-top-80">
+
+
+<!-- Place this tag where you want the button to render. -->
+<a class="github-button" href="https://github.com/ivanpaulovich" data-show-count="true" aria-label="Follow @ivanpaulovich on GitHub">Follow @ivanpaulovich</a>
+
+<br />
+
+<a href="https://twitter.com/ivanpaulovich?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @ivanpaulovich</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<br />
+
+
+<div class="g-ytsubscribe" data-channelid="UCNa5mOYnmc4ipZjFNUY4q_Q" data-layout="default" data-theme="dark" data-count="hidden"></div>
+
+<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US" data-type="vertical" data-theme="light" data-vanity="ivanpaulovich"><a class="LI-simple-link" href='https://se.linkedin.com/in/ivanpaulovich?trk=profile-badge'>Ivan Paulovich</a></div>
+
+</div>
 </div>
 
 </div>
