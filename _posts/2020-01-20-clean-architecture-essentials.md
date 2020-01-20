@@ -56,8 +56,8 @@ A set of use cases is used to describe software. Following the Customer primary 
 
 This article uses code snippets from sample applications and talks. If you are familiar with .NET, these GitHub projects host the full implementation:
 
-* :globe_with_meridians: [Clean Architecture Manga](https://github.com/ivanpaulovich/clean-architecture-manga).
-* :globe_with_meridians: [Todo](https://github.com/ivanpaulovich/todo).
+* [Clean Architecture Manga](https://github.com/ivanpaulovich/clean-architecture-manga).
+* [Todo](https://github.com/ivanpaulovich/todo).
 
 Following the project structure:
 
