@@ -14,7 +14,7 @@ We usually see Software Architecture descriptions like "The software architectur
 
 Secondly, I will distill the Clean Architecture Principles.
 
-{% youtube hZGF6RHrr8o %}
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hZGF6RHrr8o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Architecture is About Usage
 
@@ -478,7 +478,3 @@ To make it short, at the end a Console UI and a Storage to GitHub gist was good 
 * Defer decisions by implementing the simplest component first.
 
 The [source code is on GitHub](https://github.com/ivanpaulovich/clean-architecture-manga) and it is updated frequently with new videos and pull-requests. Check it out!
-
-{% github ivanpaulovich/clean-architecture-manga %}
-
-{% slideshare lRAYzRzIGiJOZw %}
