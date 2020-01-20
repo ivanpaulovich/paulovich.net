@@ -6,6 +6,7 @@ permalink: /clean-architecture-essentials/
 author: ivanpaulovich
 categories: [ cleanarchitecture ]
 image: assets/images/17.jpg
+featured: true
 ---
 
 # The "Software Architecture"
