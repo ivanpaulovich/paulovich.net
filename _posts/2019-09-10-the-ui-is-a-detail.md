@@ -5,7 +5,6 @@ date: 2019-09-11T19:12:52+02:00
 author: ivanpaulovich
 categories: [ cleanarchitecture ]
 image: img/clean-architecture-the-ui-is-a-detail.jpeg
-featured: true
 ---
 Today I talk about Presenters. I hope you enjoy and I looking forward feedback.
 
